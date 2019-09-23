@@ -267,7 +267,9 @@ def buildOPF(dstdir, title, filelist, cover=None):
     opffile = os.path.join(dstdir, 'OEBPS', 'content.opf')
     deviceres = options.profileData[1]
     if options.righttoleft:
-        writingmode = "horizontal-rl"
+        # writingmode = "horizontal-rl"
+        # force left-to-right read
+        writingmode = "horizontal-lr"
     else:
         writingmode = "horizontal-lr"
     f = open(opffile, "w", encoding='UTF-8')
